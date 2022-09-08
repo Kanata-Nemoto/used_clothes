@@ -93,15 +93,44 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+console.log(markerData);
+var map;
+var marker = [];
+var infoWindow = [];
+
 window.initAutocomplete = function () {
-  var map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: {
-      lat: -33.8688,
-      lng: 151.2195
+      lat: 35.66158221363777,
+      lng: 139.66695481969188
     },
-    zoom: 13,
-    mapTypeId: "roadmap"
-  });
+    //下北沢駅を中心に指定
+    zoom: 17,
+    mapTypeId: "roadmap" // 地図のズームを指定
+
+  }); // マーカー毎の処理
+
+  for (var i = 0; i < markerData.length; i++) {
+    var markerLatLng = new google.maps.LatLng({
+      lat: markerData[i]['lat'],
+      lng: markerData[i]['lng']
+    }); // 緯度経度のデータ作成
+
+    marker[i] = new google.maps.Marker({
+      // マーカーの追加
+      position: markerLatLng,
+      // マーカーを立てる位置を指定
+      map: map // マーカーを立てる地図を指定
+
+    });
+    infoWindow[i] = new google.maps.InfoWindow({
+      // 吹き出しの追加
+      content: '<div class="sample">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+
+    });
+    markerEvent(i); // マーカーにクリックイベントを追加
+  }
+
   var input = document.getElementById("pac-input");
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -150,6 +179,13 @@ window.initAutocomplete = function () {
     map.fitBounds(bounds);
   });
 };
+
+function markerEvent(i) {
+  marker[i].addListener('click', function () {
+    // マーカーをクリックしたとき
+    infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+  });
+}
 
 /***/ }),
 

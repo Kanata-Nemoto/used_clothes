@@ -1,10 +1,31 @@
+console.log(markerData);
+
+var map;
+var marker = [];
+var infoWindow = [];
+
 window.initAutocomplete = function () {
-  
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -33.8688, lng: 151.2195 },
-    zoom: 13,
-    mapTypeId: "roadmap",
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.66158221363777, lng: 139.66695481969188},  //下北沢駅を中心に指定
+    zoom: 18,
+    mapTypeId: "roadmap" // 地図のズームを指定
   });
+ 
+ // マーカー毎の処理
+  for (var i = 0; i < markerData.length; i++) {
+    var markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
+    marker[i] = new google.maps.Marker({ // マーカーの追加
+      position: markerLatLng, // マーカーを立てる位置を指定
+      map: map // マーカーを立てる地図を指定
+    });
+ 
+    infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+      content: '<div class="sample">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+    });
+ 
+    markerEvent(i); // マーカーにクリックイベントを追加
+  }
+  
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
 
@@ -31,19 +52,14 @@ window.initAutocomplete = function () {
     const bounds = new google.maps.LatLngBounds();
     places.forEach((place) => {
       if (!place.geometry) {
-        
-
         console.log("Returned place contains no geometry");
         return;
       }
       const icon = {
         url: place.icon,
-        
         size: new google.maps.Size(71, 71),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(17, 34),
-        
-
         scaledSize: new google.maps.Size(25, 25),
       };
      
@@ -57,16 +73,18 @@ window.initAutocomplete = function () {
       );
 
       if (place.geometry.viewport) {
-        
         bounds.union(place.geometry.viewport);
-        
       } else {
         bounds.extend(place.geometry.location);
-        
       }
     });
-    map.fitBounds(bounds);
     
+    map.fitBounds(bounds);
+  });
+}
 
+function markerEvent(i) {
+    marker[i].addListener('click', function() { // マーカーをクリックしたとき
+    infoWindow[i].open(map, marker[i]); // 吹き出しの表示
   });
 }

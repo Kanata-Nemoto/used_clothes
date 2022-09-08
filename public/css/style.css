@@ -2,6 +2,10 @@
   height: 100%;
 }
 
+.detail_map {
+  width: 40%;
+}
+
 html,
 body {
   height: 100%;
@@ -11,6 +15,9 @@ body {
 
 header {
   background-color: #28CC9E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #description {
