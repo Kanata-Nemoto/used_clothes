@@ -27,7 +27,8 @@ class AddLatLngColumnToShopsTable extends Migration
     public function down()
     {
         Schema::table('shops', function (Blueprint $table) {
-            //
+            $table->dropColumn('lat');
+            $table->dropColumn('lng');
         });
     }
 }

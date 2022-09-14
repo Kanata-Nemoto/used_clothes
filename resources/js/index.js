@@ -1,5 +1,3 @@
-console.log(markerData);
-
 var map;
 var marker = [];
 var infoWindow = [];
@@ -84,7 +82,10 @@ window.initAutocomplete = function () {
 }
 
 function markerEvent(i) {
-    marker[i].addListener('click', function() { // マーカーをクリックしたとき
+  marker[i].addListener('mouseover', function() {
     infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+  });
+  marker[i].addListener('mouseleave', function() {
+    infoWindow[i].close(map, marker[i]); // 吹き出しの表示
   });
 }

@@ -1,23 +1,29 @@
-#map {
-  height: 100%;
-}
-
-.detail_map {
-  width: 40%;
-}
-
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
+#map {
+  height: 95%;
+  margin: 1%;
+}
+
+.detail_map {
+  width: 40%;
+  height: 500px;
+  float: left;
+}
+
 header {
-  background-color: #28CC9E;
+  background-color: #10C7E0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#detail {
+  float: right;
 }
 
 #description {

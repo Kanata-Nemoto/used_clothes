@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/index.js":
-/*!*******************************!*\
-  !*** ./resources/js/index.js ***!
-  \*******************************/
+/***/ "./resources/js/detail.js":
+/*!********************************!*\
+  !*** ./resources/js/detail.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -109,95 +109,43 @@ window.initAutocomplete = function () {
 
   }); // マーカー毎の処理
 
-  for (var i = 0; i < markerData.length; i++) {
-    var markerLatLng = new google.maps.LatLng({
-      lat: markerData[i]['lat'],
-      lng: markerData[i]['lng']
-    }); // 緯度経度のデータ作成
+  var markerLatLng = new google.maps.LatLng({
+    lat: detailMarkerData['lat'],
+    lng: detailMarkerData['lng']
+  }); // 緯度経度のデータ作成
 
-    marker[i] = new google.maps.Marker({
-      // マーカーの追加
-      position: markerLatLng,
-      // マーカーを立てる位置を指定
-      map: map // マーカーを立てる地図を指定
+  marker = new google.maps.Marker({
+    // マーカーの追加
+    position: markerLatLng,
+    // マーカーを立てる位置を指定
+    map: map // マーカーを立てる地図を指定
 
-    });
-    infoWindow[i] = new google.maps.InfoWindow({
-      // 吹き出しの追加
-      content: '<div class="sample">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
-
-    });
-    markerEvent(i); // マーカーにクリックイベントを追加
-  }
-
-  var input = document.getElementById("pac-input");
-  var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  map.addListener("bounds_changed", function () {
-    searchBox.setBounds(map.getBounds());
   });
-  var markers = [];
-  searchBox.addListener("places_changed", function () {
-    var places = searchBox.getPlaces();
+  infoWindow = new google.maps.InfoWindow({
+    // 吹き出しの追加
+    content: '<div class="sample">' + detailMarkerData['name'] + '</div>' // 吹き出しに表示する内容
 
-    if (places.length == 0) {
-      return;
-    }
-
-    markers.forEach(function (marker) {
-      marker.setMap(null);
-    });
-    markers = [];
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function (place) {
-      if (!place.geometry) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
-
-      if (place.geometry.viewport) {
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
   });
+  markerEvent(); // マーカーにクリックイベントを追加
 };
 
-function markerEvent(i) {
-  marker[i].addListener('mouseover', function () {
-    infoWindow[i].open(map, marker[i]); // 吹き出しの表示
-  });
-  marker[i].addListener('mouseleave', function () {
-    infoWindow[i].close(map, marker[i]); // 吹き出しの表示
+function markerEvent() {
+  marker.addListener('click', function () {
+    // マーカーをクリックしたとき
+    infoWindow.open(map, marker); // 吹き出しの表示
   });
 }
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************!*\
-  !*** multi ./resources/js/index.js ***!
-  \*************************************/
+/***/ 2:
+/*!**************************************!*\
+  !*** multi ./resources/js/detail.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/used_clothes/resources/js/index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/used_clothes/resources/js/detail.js */"./resources/js/detail.js");
 
 
 /***/ })
