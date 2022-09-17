@@ -1,29 +1,8 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
 #map {
-  height: 95%;
+  height: 90%;
   margin: 1%;
-}
-
-.detail_map {
-  width: 40%;
-  height: 500px;
-  float: left;
-}
-
-header {
-  background-color: #10C7E0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#detail {
-  float: right;
+  border: 1px solid black;
 }
 
 #description {
@@ -96,4 +75,102 @@ header {
 
 #target {
   width: 345px;
+}
+
+
+/* detail.blade.php */
+.detail_map {
+  width: 40%;
+  height: 60% !important;
+  float: left;
+}
+
+#detail {
+  float: right;
+  margin: 3% auto;
+  padding: 0 5%;
+  width: 55%;
+}
+
+#detail ul {
+  padding-left: 0;
+  margin-bottom: 5%;
+}
+
+#detail li {
+  list-style: none;
+  font-size: 1.2rem;
+  margin-bottom: 3%;
+}
+
+@media (max-width: 768px) {
+  .detail_map {
+    width: 100%;
+    height: 50% !important;
+    float: none;
+  }
+  
+  #detail {
+    float: none;
+    margin: 3% auto;
+    padding: 0 5%;
+    width: 100%;
+  }
+  
+  #detail li {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* mypage.blade.php */
+#mypage {
+  margin: 0 auto;
+  padding: 0 5%;
+  max-width: 800px;
+}
+
+.favorite-title {
+  font-size: 1.4rem;
+  margin: 5% 0;
+}
+
+.favorite-wrapper .favorite-item {
+  display: flex;
+  vertical-align: middle;
+}
+
+.favorite-wrapper .favorite-item .item-name {
+  width: 60%;
+  font-size: 1.2rem;
+}
+
+.favorite-wrapper .favorite-item .item-detail {
+  width: 10%;
+}
+
+.favorite-wrapper .favorite-item .favorite-btn {
+  width: 30%
+}
+
+@media (max-width: 768px) {
+  .favorite-title {
+    font-size: 1.2rem;
+    margin: 5% 0;
+  }
+  
+  .favorite-wrapper .favorite-item .item-name {
+    width: 60%;
+    font-size: 0.8rem;
+  }
+  
+  .favorite-wrapper .favorite-item .item-detail {
+    width: 10%;
+    font-size: 0.8rem;
+  }
+  
+  .favorite-wrapper .favorite-item .favorite-btn {
+    width: 30%;
+    font-size: 0.5rem;
+  }
 }

@@ -20,7 +20,7 @@ class ShopController extends Controller
     
     public function mypage()
     {
-        $shops = \Auth::user()->favorites()->orderBy('created_at', 'desc')->paginate(10);
+        $shops = \Auth::user()->favorite_shops()->orderBy('created_at', 'desc')->paginate(10);
         return view('shops/mypage')->with(['shops' => $shops]);
     }
 }

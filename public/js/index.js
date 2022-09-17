@@ -181,10 +181,13 @@ window.initAutocomplete = function () {
 
 function markerEvent(i) {
   marker[i].addListener('mouseover', function () {
-    infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+    infoWindow[i].open(map, marker[i]);
   });
-  marker[i].addListener('mouseleave', function () {
-    infoWindow[i].close(map, marker[i]); // 吹き出しの表示
+  marker[i].addListener('mouseout', function () {
+    infoWindow[i].close(map, marker[i]);
+  });
+  marker[i].addListener('click', function () {
+    location.replace("/shops/" + markerData[i]['id']);
   });
 }
 

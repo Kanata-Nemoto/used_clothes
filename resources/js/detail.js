@@ -4,7 +4,7 @@ var infoWindow = [];
 
 window.initAutocomplete = function () {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 35.66158221363777, lng: 139.66695481969188},  //下北沢駅を中心に指定
+    center: {lat: detailMarkerData['lat'], lng: detailMarkerData['lng']},  //下北沢駅を中心に指定
     zoom: 18,
     mapTypeId: "roadmap" // 地図のズームを指定
   });
@@ -19,13 +19,5 @@ window.initAutocomplete = function () {
  
   infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
     content: '<div class="sample">' + detailMarkerData['name'] + '</div>' // 吹き出しに表示する内容
-  });
- 
-  markerEvent(); // マーカーにクリックイベントを追加
-}
-
-  function markerEvent() {
-    marker.addListener('click', function() { // マーカーをクリックしたとき
-    infoWindow.open(map, marker); // 吹き出しの表示
   });
 }

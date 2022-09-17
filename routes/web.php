@@ -6,11 +6,12 @@ use App\Http\Controllers\FavoriteController;
 
 Route::get('/', 'ShopController@index');
 Route::get('/shops/{shop}', 'ShopController@detail')->name('shop.detail');
-Route::get('/mypage', 'ShopController@mypage');
-Route::delete('/favorite/mypage', 'FavoriteController@destroyMypage');
-Route::post('/favorite', 'FavoriteController@store');
-Route::delete('/favorite', 'FavoriteController@destroy');
+
+Route::group(['middleware' => ['auth']], function(){
+   Route::get('/mypage', 'ShopController@mypage')->name('shop.mypage');
+    Route::delete('/favorite/mypage', 'FavoriteController@destroyMypage');
+    Route::post('/favorite', 'FavoriteController@store');
+    Route::delete('/favorite', 'FavoriteController@destroy'); 
+});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

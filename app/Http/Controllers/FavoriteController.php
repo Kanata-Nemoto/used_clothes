@@ -27,6 +27,6 @@ class FavoriteController extends Controller
         $shop = Shop::findOrFail($request->shop_id);
         $shop->favorites()->delete();
 
-        return redirect()->route('/mypage');
+        return redirect()->route('shop.mypage');
     }
 }

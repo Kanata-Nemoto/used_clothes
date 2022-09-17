@@ -44,6 +44,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -170,13 +176,12 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  color: #000000E6;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #1d68a7;
   text-decoration: underline;
 }
 
@@ -4453,11 +4458,12 @@ input[type=button].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .nav-link.disabled {
