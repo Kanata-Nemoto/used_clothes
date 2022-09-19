@@ -22,8 +22,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/caka_shimokitazawa/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66372992897464',
-            'lng' => '139.66810707930617',
+            'lat' => 35.66372992897464,
+            'lng' => 139.66810707930617,
         ]);
         DB::table('shops')->insert([
             'id' => '2',
@@ -36,8 +36,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/used_focus/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.663804457507446',
-            'lng' => '139.6680286013757',
+            'lat' => 35.663804457507446,
+            'lng' => 139.6680286013757,
         ]);
         DB::table('shops')->insert([
             'id' => '3',
@@ -50,8 +50,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/iot_tokyo/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.6629176673393',
-            'lng' => '139.66878309833152',
+            'lat' => 35.6629176673393,
+            'lng' => 139.66878309833152,
         ]);
         DB::table('shops')->insert([
             'id' => '4',
@@ -64,8 +64,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/gaslampsquareshimokitazawa/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66236850950631',
-            'lng' => '139.66821983454895',
+            'lat' => 35.66236850950631,
+            'lng' => 139.66821983454895,
         ]);
          DB::table('shops')->insert([
             'id' => '5',
@@ -78,8 +78,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/signal_shimokitazawa/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66327531323086',
-            'lng' => '139.6674381773045',
+            'lat' => 35.66327531323086,
+            'lng' => 139.6674381773045,
         ]);
         DB::table('shops')->insert([
             'id' => '6',
@@ -92,8 +92,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/iroha_tokyo/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66325880270702',
-            'lng' => '139.6670535202379',
+            'lat' => 35.66325880270702,
+            'lng' => 139.6670535202379,
         ]);
         DB::table('shops')->insert([
             'id' => '7',
@@ -106,8 +106,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/florida_shimokitazawa/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66294639153243',
-            'lng' => '139.6667850416419',
+            'lat' => 35.66294639153243,
+            'lng' => 139.6667850416419,
         ]);
         DB::table('shops')->insert([
             'id' => '8',
@@ -120,8 +120,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/big_time_shimokitazawa/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.6626875420995',
-            'lng' => '139.66645660564268',
+            'lat' => 35.6626875420995,
+            'lng' => 139.66645660564268,
         ]);
         DB::table('shops')->insert([
             'id' => '9',
@@ -134,8 +134,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/meadow_by_flamingo/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66254661699867',
-            'lng' => '139.66636790760214',
+            'lat' => 35.66254661699867,
+            'lng' => 139.66636790760214,
         ]);
         DB::table('shops')->insert([
             'id' => '10',
@@ -148,8 +148,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/micmo_shimokita.2/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66225787743048',
-            'lng' => '139.6676305541305',
+            'lat' => 35.66225787743048,
+            'lng' => 139.6676305541305,
         ]);
         DB::table('shops')->insert([
             'id' => '11',
@@ -162,8 +162,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/micmo_shimokita/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.662581884217964',
-            'lng' => '139.66689629912264',
+            'lat' => 35.662581884217964,
+            'lng' => 139.66689629912264,
         ]);
         DB::table('shops')->insert([
             'id' => '12',
@@ -176,8 +176,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/micmo_shimokita3part2/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66243254108618',
-            'lng' => '139.6677500792627',
+            'lat' => 35.66243254108618,
+            'lng' => 139.6677500792627,
         ]);
         DB::table('shops')->insert([
             'id' => '13',
@@ -190,8 +190,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/micmo_shimokita4/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66273511202862',
-            'lng' => '139.6675375060421',
+            'lat' => 35.66273511202862,
+            'lng' => 139.6675375060421,
         ]);
         DB::table('shops')->insert([
             'id' => '14',
@@ -204,8 +204,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/micmo_shimokita/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.66012538007886',
-            'lng' => '139.6674694963306',
+            'lat' => 35.66012538007886,
+            'lng' => 139.6674694963306,
         ]);
         DB::table('shops')->insert([
             'id' => '15',
@@ -218,8 +218,8 @@ class ShopsTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/micmo_shimokita/',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'lat' => '35.65945080136012',
-            'lng' => '139.66734368974858',
+            'lat' => 35.65945080136012,
+            'lng' => 139.66734368974858,
         ]);
         DB::table('shops')->insert([
             'id' => '16',
