@@ -221,5 +221,19 @@ class ShopsTableSeeder extends Seeder
             'lat' => '35.65945080136012',
             'lng' => '139.66734368974858',
         ]);
+        DB::table('shops')->insert([
+            'id' => '16',
+            'name' => 'フラミンゴ 下北沢店',
+            'address' => '東京都世田谷区北沢２丁目２５−１２ リサビル 1Ｆ',
+            'phone_number' => '',
+            'business_hours' => '月～金 １２：００ ～ ２１：００，土日 １１：００ ～ ２１：００',
+            'price_range' => '￥５０００～',
+            'feature' => '若者に人気、古着初心者おすすめ',
+            'instagram' => 'https://www.instagram.com/flamingo_shimokitazawa/',
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            'lat' => 35.66269545633684,
+            'lng' => 139.66705910183197,
+        ]);
     }
 }
