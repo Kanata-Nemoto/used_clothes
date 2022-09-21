@@ -111,8 +111,8 @@ window.initAutocomplete = function () {
 
   for (var i = 0; i < markerData.length; i++) {
     var markerLatLng = new google.maps.LatLng({
-      lat: markerData[i]['lat'],
-      lng: markerData[i]['lng']
+      lat: 35.66372992897464,
+      lng: 139.66810707930617
     }); // 緯度経度のデータ作成
 
     marker[i] = new google.maps.Marker({
