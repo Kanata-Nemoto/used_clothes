@@ -98,21 +98,14 @@ var marker = [];
 var infoWindow = [];
 
 window.initAutocomplete = function () {
+  var markerLatLng = new google.maps.LatLng(detailMarkerData['lat'], detailMarkerData['lng']); // 緯度経度のデータ作成
+
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {
-      lat: detailMarkerData['lat'],
-      lng: detailMarkerData['lng']
-    },
-    //下北沢駅を中心に指定
+    center: markerLatLng,
     zoom: 18,
     mapTypeId: "roadmap" // 地図のズームを指定
 
   }); // マーカー毎の処理
-
-  var markerLatLng = new google.maps.LatLng({
-    lat: detailMarkerData['lat'],
-    lng: detailMarkerData['lng']
-  }); // 緯度経度のデータ作成
 
   marker = new google.maps.Marker({
     // マーカーの追加
