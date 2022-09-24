@@ -13,6 +13,14 @@ class ShopController extends Controller
         return view('shops/index')->with(['shops' => $shop->get()]);
     }
     
+    public function search(Request $request)
+    {
+        $feature = $request->feature;
+        $shops = Shop::where('feature', 'like', "%$feature%")->get();
+        
+        return view('shops/search')->with(['shops' => $shops, 'feature' => $feature]);
+    }
+    
     public function detail(Shop $shop)
     {
         return view('shops/detail')->with(['shop' => $shop]);

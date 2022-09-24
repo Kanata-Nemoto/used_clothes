@@ -5,6 +5,7 @@ use App\Http\Controllers\FavoriteController;
 
 
 Route::get('/', 'ShopController@index');
+Route::post('/search', 'ShopController@search');
 Route::get('/shops/{shop}', 'ShopController@detail')->name('shop.detail');
 
 Route::group(['middleware' => ['auth']], function(){

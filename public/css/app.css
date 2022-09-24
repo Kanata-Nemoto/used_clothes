@@ -170,12 +170,13 @@ sup {
 }
 
 a {
-  color: #000000E6;
+  color: #3490dc;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
+  color: #1d68a7;
   text-decoration: underline;
 }
 
@@ -4452,12 +4453,11 @@ input[type=button].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .nav-link.disabled {
