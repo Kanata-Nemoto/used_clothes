@@ -5,18 +5,9 @@
         @csrf
         <select class="form-feature-search" name="feature" class="form-search">
             <option disabled selected value="">選択してください</option>
-            <option value="古着初心者おすすめ" @if("古着初心者おすすめ" == $feature) selected @endif>古着初心者おすすめ</option>
-            <option value="コスパ〇" @if("コスパ〇" == $feature) selected @endif>コスパ〇</option>
-            <option value="気軽に買える価格設定" @if("気軽に買える価格設定" == $feature) selected @endif>気軽に買える価格設定</option>
-            <option value="きれいめな古着" @if("きれいめな古着" == $feature) selected @endif>きれいめな古着</option>
-            <option value="一点ものが多い" @if("一点ものが多い" == $feature) selected @endif>一点ものが多い</option>
-            <option value="個性のあるデザイン" @if("個性のあるデザイン" == $feature) selected @endif>個性のあるデザイン</option>
-            <option value="派手なデザイン" @if("派手なデザイン" == $feature) selected @endif>派手なデザイン</option>
-            <option value="カラフル" @if("カラフル" == $feature) selected @endif>カラフル</option>
-            <option value="店内の雰囲気〇" @if("店内の雰囲気〇" == $feature) selected @endif>店内の雰囲気〇</option>
-            <option value="若者に人気" @if("若者に人気" == $feature) selected @endif>若者に人気</option>
-            <option value="品揃え多い" @if("品揃え多い" == $feature) selected @endif>品揃え多い</option>
-            <option value="リメイク品多い" @if("リメイク品多い" == $feature) selected @endif>リメイク品多い</option>
+            @foreach (config('const.features') as $number => $feature)
+                <option value="{{ $feature }}" @if($feature == $input_feature) selected @endif>{{ $feature }}</option>
+            @endforeach
         </select>
         <button type="submit" class="feature-search-btn">検索</button>
     </form>

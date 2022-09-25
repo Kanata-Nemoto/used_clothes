@@ -15,10 +15,10 @@ class ShopController extends Controller
     
     public function search(Request $request)
     {
-        $feature = $request->feature;
-        $shops = Shop::where('feature', 'like', "%$feature%")->get();
+        $input_feature = $request->feature;
+        $shops = Shop::where('feature', 'like', "%$input_feature%")->get();
         
-        return view('shops/search')->with(['shops' => $shops, 'feature' => $feature]);
+        return view('shops/search')->with(['shops' => $shops, 'input_feature' => $input_feature]);
     }
     
     public function detail(Shop $shop)

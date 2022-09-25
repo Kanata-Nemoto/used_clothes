@@ -88,33 +88,46 @@ html, body {
 
 
 /* mypage.blade.php */
+.mypage_map {
+  width: 50%;
+  height: 60% !important;
+  float: left;
+}
+
 #mypage {
+  float: right;
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 0 0%;
+  width: 45%;
   max-width: 800px;
 }
 
-.favorite-title {
+#mypage .favorite-title {
   font-size: 1.4rem;
   margin: 5% 0;
 }
 
-.favorite-wrapper .favorite-item {
+#mypage .favorite-wrapper .favorite-item {
   display: flex;
   vertical-align: middle;
 }
 
-.favorite-wrapper .favorite-item .item-name {
-  width: 60%;
+#mypage .favorite-wrapper .favorite-item .item-name {
+  width: 50%;
   font-size: 1.2rem;
 }
 
-.favorite-wrapper .favorite-item .item-detail {
+#mypage .favorite-wrapper .favorite-item .item-detail {
   width: 10%;
+  margin-top: 1%;
 }
 
-.favorite-wrapper .favorite-item .favorite-btn {
+#mypage .favorite-wrapper .favorite-item .favorite-btn {
   width: 30%
+}
+
+#mypage .pagenation-wrapper {
+  margin-top: 3%;
 }
 
 @media (max-width: 768px) {

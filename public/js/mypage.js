@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/index.js":
-/*!*******************************!*\
-  !*** ./resources/js/index.js ***!
-  \*******************************/
+/***/ "./resources/js/mypage.js":
+/*!********************************!*\
+  !*** ./resources/js/mypage.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -107,11 +107,10 @@ window.initAutocomplete = function () {
     zoom: 17,
     mapTypeId: "roadmap" // 地図のズームを指定
 
-  });
-  console.log(markerData); // マーカー毎の処理
+  }); // マーカー毎の処理
 
-  for (var i = 0; i < markerData.length; i++) {
-    var markerLatLng = new google.maps.LatLng(markerData[i]['lat'], markerData[i]['lng']); // 緯度経度のデータ作成
+  for (var i = 0; i < mypageMarkerData.data.length; i++) {
+    var markerLatLng = new google.maps.LatLng(mypageMarkerData.data[i]['lat'], mypageMarkerData.data[i]['lng']); // 緯度経度のデータ作成
 
     marker[i] = new google.maps.Marker({
       // マーカーの追加
@@ -122,7 +121,7 @@ window.initAutocomplete = function () {
     });
     infoWindow[i] = new google.maps.InfoWindow({
       // 吹き出しの追加
-      content: '<div class="sample">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+      content: '<div class="sample">' + mypageMarkerData.data[i]['name'] + '</div>' // 吹き出しに表示する内容
 
     });
     markerEvent(i); // マーカーにクリックイベントを追加
@@ -137,20 +136,20 @@ function markerEvent(i) {
     infoWindow[i].close(map, marker[i]);
   });
   marker[i].addListener('click', function () {
-    location.replace("/shops/" + markerData[i]['id']);
+    location.replace("/shops/" + mypageMarkerData.data[i]['id']);
   });
 }
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************!*\
-  !*** multi ./resources/js/index.js ***!
-  \*************************************/
+/***/ 3:
+/*!**************************************!*\
+  !*** multi ./resources/js/mypage.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/used_clothes/resources/js/index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/used_clothes/resources/js/mypage.js */"./resources/js/mypage.js");
 
 
 /***/ })

@@ -10,9 +10,9 @@ Route::get('/shops/{shop}', 'ShopController@detail')->name('shop.detail');
 
 Route::group(['middleware' => ['auth']], function(){
    Route::get('/mypage', 'ShopController@mypage')->name('shop.mypage');
-    Route::delete('/favorite/mypage', 'FavoriteController@destroyMypage');
     Route::post('/favorite', 'FavoriteController@store');
-    Route::delete('/favorite', 'FavoriteController@destroy'); 
+    Route::delete('/favorite', 'FavoriteController@destroy');
+    Route::delete('/favorite/mypage', 'FavoriteController@destroyMypage');
 });
 
 Auth::routes();

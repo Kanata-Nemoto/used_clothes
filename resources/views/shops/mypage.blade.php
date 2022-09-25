@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <div id="map" class="detail_map mypage_map"></div>
     <main id=mypage>
         <h2 class="favorite-title"><i class="fa-solid fa-star" style="color: yellow"></i>お気に入りリスト</h2>
         <div class="favorite-wrapper">
-            @forEach($shops as $shop)   
+            @foreach($shops as $shop)   
                 <div class="favorite-item">
                     <p class="item-name">{{ $shop->name }}</p>
                     <a class="item-detail" href=/shops/{{ $shop->id }}>詳細</a>
@@ -17,6 +18,10 @@
                 </div>
             @endforeach    
         </div>
-        {{ $shops->links() }}
+        <div class="pagenation-wrapper">{{ $shops->links() }}</div>
     </main>
+    
+    <script>var mypageMarkerData = @json($shops);</script>
+    <script type="module" src="{{ mix('/js/mypage.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBoqG2pj5dVivX1cB8MWw-Evgh4D402Os&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
 @endsection
