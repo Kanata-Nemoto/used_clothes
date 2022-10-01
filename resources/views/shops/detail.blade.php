@@ -10,7 +10,7 @@
             <li class="shop_phone">電話番号：{{ $shop->phone_number }}</li>
             <li class="price_range">価格帯：{{ $shop->price_range }}</li>
             <li class="shop_feature">特徴：{{ $shop->feature }}</li>
-            <li class="shop_instagram"><a href="{{ $shop->instagram }}">instagram：<i class="fa-brands fa-instagram" style="color: pink"></i></a></li>
+            <li class="shop_instagram">instagram：<a href="{{ $shop->instagram }}"><i class="fa-brands fa-instagram" style="color: pink"></i></a></li>
         </ul>
         <div class="shop-control">
             @if (Auth::check())
