@@ -4,8 +4,43 @@ html, body {
   padding: 0;
 }
 
+
+/***** app.blade.php *****/
+.navbar-brand {
+  font-size: 1.4rem;
+  margin-right: 2rem;
+  font-weight: 500;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 3px 16px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.2rem;
+    margin-right: 0;
+    font-weight: 400;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+/***** app.blade.php *****/
+
+
+/***** index.blade.php *****/
+
+/* map */
 #map {
-  height: 90%;
+  height: 88%;
   margin: 1%;
   border: 1px solid black;
 }
@@ -22,13 +57,19 @@ html, body {
   display: inline;
 }
 
+.sample {
+  font-size: 1.2rem;
+}
+/* map */
+
+/* search-box */
 .form-search {
-  margin: 1% 0 -1% 1%;
+  margin: 1% 0 0 1%;
 }
 
 .form-feature-search {
   width: 300px;
-  height: calc(1.6em + 0.75rem + 2px);
+  height:35px;
   padding: 0.375rem 0.75rem;
   font-size: 0.9rem;
   font-weight: 400;
@@ -41,19 +82,79 @@ html, body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.feature-search-btn {
+  width: 70px;
+  height: 35px;
+  border-radius: 2px;
+  background: #7fbfff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  transition: 0.5s;
+}
 
-/* detail.blade.php */
+.feature-search-btn:hover {
+  background: #eee;
+  color: #7fbfff;
+}
+/* search-box */
+
+@media (max-width: 768px) {
+  /* map */
+  #map {
+    height: 87%;
+  }
+
+  .sample {
+    font-size: 1rem;
+  }
+  /* map */
+  
+  /* search-box */
+  .form-feature-search {
+    width: 250px;
+    height: 30px;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .feature-search-btn {
+    width: 50px;
+    height: 30px;
+    border-radius: 2px;
+    font-size: 0.9rem;
+  }
+  
+  .feature-search-btn:hover {
+    background: #eee;
+    color: #7fbfff;
+  }
+  /* search-box */ 
+}
+/***** index.blade.php *****/
+
+
+/***** detail.blade.php *****/
 .detail_map {
-  width: 40%;
-  height: 60% !important;
+  margin: 3% 1% 1% 3% !important; 
+  width: 46%;
+  height: 50% !important;
   float: left;
 }
 
 #detail {
   float: right;
-  margin: 3% auto;
-  padding: 0 5%;
-  width: 55%;
+  margin: 3% 3% 0 1%;
+  padding: 0 3%;
+  width: 46%;
 }
 
 #detail ul {
@@ -63,21 +164,128 @@ html, body {
 
 #detail li {
   list-style: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 3%;
 }
+
+/* instagram btn */
+.insta-btn {
+  display: inline-block;
+  text-align: center;
+  color: #2e6ca5;
+  font-size: 20px;
+  margin-bottom: 3%;
+}
+
+.insta-btn:hover {
+  color: #668ad8;
+  transition: .5s;
+}
+
+.insta-btn .insta {/*アイコンの背景*/
+  position: relative;/*相対配置*/
+  display: inline-block;
+  width: 40px;/*幅*/
+  height: 40px;/*高さ*/
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;/*グラデーション①*/
+  overflow: hidden;/*はみ出た部分を隠す*/
+  border-radius: 10px;/*角丸に*/
+}
+
+.insta-btn .insta:before {/*グラデーションを重ねるため*/
+  content: '';
+  position: absolute;/*絶対配置*/
+  top: 20px;/*ずらす*/
+  left: -15px;/*ずらす*/
+  width: 50px;/*グラデーションカバーの幅*/
+  height: 50px;/*グラデーションカバーの高さ*/
+  background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+  background: radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);/*グラデーション②*/
+}
+
+.insta-btn .fa-instagram {/*アイコン*/
+  color: #FFF;/*白に*/
+  position: relative;/*z-indexを使うため*/
+  z-index: 2;/*グラデーションより前に*/
+  font-size: 25px;/*アイコンサイズ*/
+  line-height: 40px;/*高さと合わせる*/
+}
+/* instagram btn */
+
+/* favorite btn */
+.favorite-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 240px;
+  padding: 10px 25px 10px 50px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  background: #eee;
+  border-radius: 50px;
+  z-index:0;
+  overflow: hidden;
+}
+
+.is-favorite:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f005";
+  line-height: 1;
+  position: absolute;
+  left: 5px;
+  background: #FFF;
+  padding: 12px 11px;
+  border-radius: 60px;
+  z-index: 2;
+  color: #FFCC33;
+}
+
+.isnot-favorite:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f005";
+  line-height: 1;
+  position: absolute;
+  left: 5px;
+  background: #FFF;
+  padding: 12px 11px;
+  border-radius: 60px;
+  z-index: 2;
+}
+
+.favorite-btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  display: block;
+  background: #ccc;
+  transition: .3s;
+  left:0;
+}
+
+.favorite-btn:hover:after {
+  width: 100%;
+  z-index: -1;
+}
+/* favorite btn */
 
 @media (max-width: 768px) {
   .detail_map {
     width: 100%;
     height: 50% !important;
+    margin: 2%; 
     float: none;
   }
   
   #detail {
     float: none;
     margin: 3% auto;
-    padding: 0 5%;
+    padding: 0 4%;
     width: 100%;
   }
   
@@ -85,69 +293,134 @@ html, body {
     font-size: 0.8rem;
   }
 }
+/***** detail.blade.php *****/
 
 
-/* mypage.blade.php */
+/***** mypage.blade.php *****/
 .mypage_map {
-  width: 50%;
-  height: 60% !important;
+  margin: 3% 1% 1% 3% !important; 
+  width: 46%;
+  height: 70%;
   float: left;
 }
 
 #mypage {
   float: right;
-  margin: 0 auto;
-  padding: 0 0%;
-  width: 45%;
-  max-width: 800px;
+  margin: 3% 3% 0 1%;
+  width: 46%;
 }
 
 #mypage .favorite-title {
   font-size: 1.4rem;
-  margin: 5% 0;
+  margin-bottom: 5%;
+}
+
+.fa-star {
+  color: #FFCC33;
+  margin-right: 0.3rem; 
 }
 
 #mypage .favorite-wrapper .favorite-item {
   display: flex;
-  vertical-align: middle;
 }
 
 #mypage .favorite-wrapper .favorite-item .item-name {
-  width: 50%;
+  width: 60%;
   font-size: 1.2rem;
+  margin-right: 1%;
 }
 
-#mypage .favorite-wrapper .favorite-item .item-detail {
-  width: 10%;
-  margin-top: 1%;
+/* detail-btn */
+#mypage .item-detail {
+  margin-right: 1%;
 }
 
-#mypage .favorite-wrapper .favorite-item .favorite-btn {
-  width: 30%
+#mypage .detail-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 40px;
+  background: #7fbfff;
+  border: 1px solid #7fbfff;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition-duration: 0.3s;
 }
+
+#mypage .detail-btn:hover {
+  background: #fff;
+  color: #7fbfff;
+}
+/* detail-btn */
+  
+/* favorite-btn */
+#mypage .favorite-btn {
+  width: 90px;
+  height: 40px;
+  padding: 6px 0px 6px 20px;
+}
+
+#mypage .is-favorite:before {
+  padding: 6px 6px;
+  border-radius: 50%;
+}
+/* favorite-btn */
 
 #mypage .pagenation-wrapper {
   margin-top: 3%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .mypage_map {
+    margin: 2% !important; 
+    width: 100%;
+    height: 50%;
+    float: none;
+  }
+  
+  #mypage {
+    float: none;
+    margin: 2%;
+    padding: 0 2%;
+    width: 100%;
+  }
+  
   .favorite-title {
-    font-size: 1.2rem;
-    margin: 5% 0;
+    font-size: 1rem !important;
+    margin: 3% 0;
   }
   
-  .favorite-wrapper .favorite-item .item-name {
-    width: 60%;
+  #mypage .favorite-wrapper .favorite-item .item-name {
     font-size: 0.8rem;
   }
-  
-  .favorite-wrapper .favorite-item .item-detail {
-    width: 10%;
-    font-size: 0.8rem;
+
+  /* detail-btn */
+  #mypage .detail-btn {
+    width: 50px;
+    height: 30px;
+    border-radius: 20px;
+  }
+  /* detail-btn */
+    
+  /* favorite-btn */
+  #mypage .favorite-btn {
+    width: 80px;
+    height: 30px;
+    padding: 6px 0px 6px 20px;
   }
   
-  .favorite-wrapper .favorite-item .favorite-btn {
-    width: 30%;
-    font-size: 0.5rem;
+  #mypage .is-favorite:before {
+    padding: 4px 4px;
+    border-radius: 50%;
+  }
+  /* favorite-btn */
+  
+  #mypage .pagenation-wrapper {
+    margin-top: 2%;
   }
 }
+/***** mypage.blade.php *****/
+

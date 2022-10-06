@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="map" class="detail_map mypage_map"></div>
+    <div id="map" class="mypage_map"></div>
     <main id=mypage>
-        <h2 class="favorite-title"><i class="fa-solid fa-star" style="color: yellow"></i>お気に入りリスト</h2>
+        <h2 class="favorite-title"><i class="fa-solid fa-star"></i>お気に入りリスト</h2>
         <div class="favorite-wrapper">
             @foreach($shops as $shop)   
                 <div class="favorite-item">
                     <p class="item-name">{{ $shop->name }}</p>
-                    <a class="item-detail" href=/shops/{{ $shop->id }}>詳細</a>
-                    <form class="favorite-btn" action="/favorite/mypage" method="post">
+                    <div class="item-detail"><a class="detail-btn" href=/shops/{{ $shop->id }}>詳細</a></div>
+                    <form action="/favorite/mypage" method="post">
                         <input type="hidden" name="shop_id" value="{{$shop->id}}">
                         @csrf
                         @method('delete')
-                        <button type="submit">お気に入り解除</button>
+                        <button type="submit" class="favorite-btn is-favorite">解除</button>
                     </form>
                 </div>
             @endforeach    

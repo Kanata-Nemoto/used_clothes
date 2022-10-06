@@ -10,8 +10,8 @@
             <li class="shop_phone">電話番号：{{ $shop->phone_number }}</li>
             <li class="price_range">価格帯：{{ $shop->price_range }}</li>
             <li class="shop_feature">特徴：{{ $shop->feature }}</li>
-            <li class="shop_instagram">instagram：<a href="{{ $shop->instagram }}"><i class="fa-brands fa-instagram" style="color: pink"></i></a></li>
         </ul>
+        <div class="shop_instagram"><a href="{{ $shop->instagram }}" class="insta-btn"><span class="insta"><i class="fa-brands fa-instagram"></i></span></a></div>
         <div class="shop-control">
             @if (Auth::check())
                 @if (Auth::user()->favorites()->where('shop_id', $shop->id)->exists())
@@ -19,17 +19,17 @@
                         <input type="hidden" name="shop_id" value="{{$shop->id}}">
                         @csrf
                         @method('delete')
-                        <button type="submit">お気に入り解除</button>
+                        <button type="submit" class="favorite-btn is-favorite"></i>お気に入り解除</i></button>
                     </form>
                 @else
                     <form action="{{ action('FavoriteController@store') }}" method="post">
                         @csrf
                         <input type="hidden" name="shop_id" value="{{$shop->id}}">
-                        <button type="submit">お気に入り登録</button>
+                        <button type="submit" class="favorite-btn isnot-favorite"></i>お気に入り登録</button>
                     </form>
                 @endif
             @else
-                    <p>お気に入り登録するに<a href="/login">ログイン</a>が必要です</p>
+                <p>お気に入り登録するに<a href="/login">ログイン</a>が必要です</p>
             @endif
         </div>
     </main>
