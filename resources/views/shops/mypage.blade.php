@@ -18,7 +18,7 @@
                 </div>
             @endforeach    
         </div>
-        <div class="pagenation-wrapper">{{ $shops->links() }}</div>
+        <div class="pagination-wrapper">{{ $shops->links() }}</div>
     </main>
     
     <script>var mypageMarkerData = @json($shops);</script>

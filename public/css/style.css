@@ -17,6 +17,48 @@ html, body {
   margin: 0 0.5rem;
 }
 
+#footer {
+  width: 100%;
+  height: 60px;
+  margin-top: 20px;
+  box-shadow: 0 -0.125rem 0.25rem rgb(0 0 0 / 8%);
+  background-color: #fff;
+  clear:both;
+}
+
+#footer .footer-container {
+  max-width: 800px;
+  height: 60px;
+  margin: 0 auto;
+  line-height: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+#footer .contact-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+#footer .contact-form {
+  display: flex;
+}
+
+#footer .contact-form li {
+  list-style: none;
+  font-size: 1.3rem;
+  margin-right: 20px;
+}
+
+#footer .contact-form li a {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#footer .contact-form li a:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
 @media (max-width: 768px) {
   .navbar {
     padding: 3px 16px;
@@ -31,6 +73,26 @@ html, body {
   .nav-link {
     font-size: 0.9rem;
     margin: 0;
+  }
+  
+  #footer {
+    height: 40px;
+    margin-top: 15px;
+  }
+  
+  #footer .footer-container {
+    height: 40px;
+    line-height: 40px;
+  }
+  
+  #footer .contact-title {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  
+  #footer .contact-form li {
+    font-size: 1rem;
+    margin-right: 20px;
   }
 }
 /***** app.blade.php *****/
@@ -144,17 +206,17 @@ html, body {
 
 /***** detail.blade.php *****/
 .detail_map {
-  margin: 3% 1% 1% 3% !important; 
+  margin: 3% 1% 3% 3% !important; 
   width: 46%;
-  height: 50% !important;
+  height: 80% !important;
   float: left;
 }
 
 #detail {
-  float: right;
   margin: 3% 3% 0 1%;
   padding: 0 3%;
   width: 46%;
+  float: right;
 }
 
 #detail ul {
@@ -221,6 +283,7 @@ html, body {
   align-items: center;
   max-width: 240px;
   padding: 10px 25px 10px 50px;
+  font-size: 0.8rem;
   color: #313131;
   transition: 0.3s ease-in-out;
   font-weight: 600;
@@ -234,10 +297,11 @@ html, body {
   font-family: "Font Awesome 5 Free";
   content: "\f005";
   line-height: 1;
+  font-size: 1.2rem;
   position: absolute;
   left: 5px;
   background: #FFF;
-  padding: 12px 11px;
+  padding: 10px 9px;
   border-radius: 60px;
   z-index: 2;
   color: #FFCC33;
@@ -248,10 +312,11 @@ html, body {
   font-weight: 400;
   content: "\f005";
   line-height: 1;
+  font-size: 1.2rem;
   position: absolute;
   left: 5px;
   background: #FFF;
-  padding: 12px 11px;
+  padding: 10px 9px;
   border-radius: 60px;
   z-index: 2;
 }
@@ -276,9 +341,9 @@ html, body {
 
 @media (max-width: 768px) {
   .detail_map {
-    width: 100%;
+    width: 96.5%;
     height: 50% !important;
-    margin: 2%; 
+    margin: 2% 2% 2% 2% !important;
     float: none;
   }
   
@@ -286,21 +351,67 @@ html, body {
     float: none;
     margin: 3% auto;
     padding: 0 4%;
-    width: 100%;
+    width: 96.5%;
   }
   
   #detail li {
     font-size: 0.8rem;
   }
+  
+  /* instagram btn */
+  .insta-btn {
+    font-size: 16px;
+    margin-bottom: 2%;
+  }
+  
+  .insta-btn .insta {/*アイコンの背景*/
+    width: 30px;/*幅*/
+    height: 30px;/*高さ*/
+    border-radius: 8px;/*角丸に*/
+  }
+  
+  .insta-btn .insta:before {/*グラデーションを重ねるため*/
+    top: 15px;/*ずらす*/
+    left: -10px;/*ずらす*/
+    width: 40px;/*グラデーションカバーの幅*/
+    height: 40px;/*グラデーションカバーの高さ*/
+  }
+  
+  .insta-btn .fa-instagram {
+    font-size: 20px;/*アイコンサイズ*/
+    line-height: 30px;/*高さと合わせる*/
+  }
+  /* instagram btn */
+  
+  /* favorite btn */
+  .favorite-btn {
+    max-width: 200px;
+    padding: 5px 10px 5px 38px;
+    font-size: 0.8rem;
+    border-radius: 40px;
+  }
+  
+  .is-favorite:before {
+    padding: 8px 7px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+  }
+  
+  .isnot-favorite:before {
+    padding: 8px 7px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+  }
+  /* favorite btn */
 }
 /***** detail.blade.php *****/
 
 
 /***** mypage.blade.php *****/
 .mypage_map {
-  margin: 3% 1% 1% 3% !important; 
+  margin: 3% 1% 3% 3% !important; 
   width: 46%;
-  height: 70%;
+  height: 80% !important;
   float: left;
 }
 
@@ -369,32 +480,32 @@ html, body {
 }
 /* favorite-btn */
 
-#mypage .pagenation-wrapper {
+#mypage .pagination-wrapper {
   margin-top: 3%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .mypage_map {
-    margin: 2% !important; 
-    width: 100%;
-    height: 50%;
+    margin: 2% 2% 2% 2% !important; 
+    width: 96.5%;
     float: none;
   }
   
   #mypage {
     float: none;
-    margin: 2%;
+    box-sizing: border-box;
+    margin: 2% 2% 2% 2%;
     padding: 0 2%;
-    width: 100%;
+    width: 96.5%;
   }
   
   .favorite-title {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
     margin: 3% 0;
   }
   
   #mypage .favorite-wrapper .favorite-item .item-name {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   /* detail-btn */
@@ -418,9 +529,48 @@ html, body {
   }
   /* favorite-btn */
   
-  #mypage .pagenation-wrapper {
-    margin-top: 2%;
+  /* pagination */
+  .pagination {
+    justify-content: center;
+    margin: 2% 0;
   }
+  
+  .page-link {
+    padding: 0.3rem 0.5rem;
+  }
+  /* pagination */
+}
+
+@media (max-width: 576px) {
+  .favorite-title {
+    font-size: 1rem !important;
+    margin: 3% 0;
+  }
+  
+  #mypage .favorite-wrapper .favorite-item .item-name {
+    font-size: 0.8rem;
+  }
+
+  /* detail-btn */
+  #mypage .detail-btn {
+    width: 40px;
+    height: 25px;
+    border-radius: 10px;
+  }
+  /* detail-btn */
+    
+  /* favorite-btn */
+  #mypage .favorite-btn {
+    width: 70px;
+    height: 25px;
+    padding: 5px 0px 5px 15px;
+  }
+  
+  #mypage .is-favorite:before {
+    padding: 3px 3px;
+    border-radius: 50%;
+  }
+  /* favorite-btn */
 }
 /***** mypage.blade.php *****/
 

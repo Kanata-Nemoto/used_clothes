@@ -17,8 +17,9 @@ window.initAutocomplete = function () {
       map: map // マーカーを立てる地図を指定
     });
  
+    var url = /shops/ + mypageMarkerData.data[i]['id'];
     infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-      content: '<div class="sample">' + mypageMarkerData.data[i]['name'] + '</div>' // 吹き出しに表示する内容
+      content: '<div class="sample">' + '<a href=' + url + '>' + mypageMarkerData.data[i]['name'] + '<a>' + '</div>' // 吹き出しに表示する内容
     });
  
     markerEvent(i); // マーカーにクリックイベントを追加
@@ -26,13 +27,7 @@ window.initAutocomplete = function () {
 }
 
 function markerEvent(i) {
-  marker[i].addListener('mouseover', function() {
-    infoWindow[i].open(map, marker[i]);
-  });
-  marker[i].addListener('mouseout', function() {
-    infoWindow[i].close(map, marker[i]);
-  });
   marker[i].addListener('click', function() {
-    location.replace("/shops/" + mypageMarkerData.data[i]['id']);
+    infoWindow[i].open(map, marker[i]);
   });
 }

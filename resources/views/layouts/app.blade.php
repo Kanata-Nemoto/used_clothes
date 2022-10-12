@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
 </head>
 <body>
-    <div id="app">
+    <header id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -74,7 +74,19 @@
                 </div>
             </div>
         </nav>
-    </div>
+    </header>
+    
     @yield('content')
+    
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="contact-title">お問い合わせ</div>
+            <ul class="contact-form">
+                <li class="email"><a href="mailto:k.nemoto.0327@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+                <li class="instagram"><a href="https://www.instagram.com/kanacha.co.jp/"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="twitter"><a href="https://twitter.com/n_kanata_6714"><i class="fa-brands fa-twitter"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

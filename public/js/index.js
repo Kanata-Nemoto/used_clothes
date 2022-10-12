@@ -107,8 +107,7 @@ window.initAutocomplete = function () {
     zoom: 17,
     mapTypeId: "roadmap" // 地図のズームを指定
 
-  });
-  console.log(markerData); // マーカー毎の処理
+  }); // マーカー毎の処理
 
   for (var i = 0; i < markerData.length; i++) {
     var markerLatLng = new google.maps.LatLng(markerData[i]['lat'], markerData[i]['lng']); // 緯度経度のデータ作成
@@ -120,9 +119,10 @@ window.initAutocomplete = function () {
       map: map // マーカーを立てる地図を指定
 
     });
+    var url = /shops/ + markerData[i]['id'];
     infoWindow[i] = new google.maps.InfoWindow({
       // 吹き出しの追加
-      content: '<div class="sample">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+      content: '<div class="sample">' + '<a href=' + url + '>' + markerData[i]['name'] + '<a>' + '</div>' // 吹き出しに表示する内容
 
     });
     markerEvent(i); // マーカーにクリックイベントを追加
@@ -130,14 +130,8 @@ window.initAutocomplete = function () {
 };
 
 function markerEvent(i) {
-  marker[i].addListener('mouseover', function () {
-    infoWindow[i].open(map, marker[i]);
-  });
-  marker[i].addListener('mouseout', function () {
-    infoWindow[i].close(map, marker[i]);
-  });
   marker[i].addListener('click', function () {
-    location.replace("/shops/" + markerData[i]['id']);
+    infoWindow[i].open(map, marker[i]);
   });
 }
 
