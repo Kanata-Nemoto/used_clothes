@@ -22,7 +22,7 @@ window.initAutocomplete = function () {
           position : currentLatLng,   // 緯度・経度
           icon: {
             url: '../image/current_position_icon.png',    // マーカー画像を指定
-            scaledSize: new google.maps.Size(50, 60)
+            scaledSize: new google.maps.Size(50, 60)      // 大きさ指定
           }
         });
       },

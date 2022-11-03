@@ -124,7 +124,8 @@ window.initAutocomplete = function () {
         icon: {
           url: '../image/current_position_icon.png',
           // マーカー画像を指定
-          scaledSize: new google.maps.Size(50, 60)
+          scaledSize: new google.maps.Size(50, 60) // 大きさ指定
+
         }
       });
     }, // 取得失敗した場合
