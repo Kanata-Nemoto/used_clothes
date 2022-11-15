@@ -1,78 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<h1>下北古着Map</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<h2>アプリ概要</h2>
+<ul>
+    <li>下北沢の古着屋の情報をまとめたアプリ</li>
+    <li>古着巡りをより分かりやすく、楽しくできる！</li>
+</ul>
+<p><a href="https://usedclothes.herokuapp.com/">アプリはこちら</a> ( Test account : test.usedclothes@gmail.com , Password : usedclothes )</p>
+<img src="https://user-images.githubusercontent.com/101101177/201837269-0c7d53cd-f6ca-4fed-8997-47def3fee567.png">
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h2>作成背景</h2>
+<p>下北沢の古着屋巡りをより「分かりやすく」「楽しく」するべく開発しました！！</p>
+<ul>
+    <li>下北沢の古着屋は数が多く、どんなお店なのか入ってみないと分からないという課題があると感じた</li>
+    <p>⇒ 情報をまとめたアプリを作ることで、より効率的に、楽しく古着巡りをしたい！</p>
+    <li>友人が「一人で来てもどの店が良いのか分からない」と言っていた</li>
+    <p>⇒ お店に詳しくない人でも、望むお店を簡単に見つけられる様にしたい！</p>
+</ul>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h2>開発環境</h2>
+<ul>
+    <li>PHP(Laravel)</li>
+    <li>JavaScript(Vue.js)</li>
+    <li>AWS</li>
+    <li>MYSQL</li>
+</ul>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<h2>機能一覧</h2>
+<ul>
+    <li>ログイン機能</li>
+    <li>Google Maps Api</li>
+    <li>店舗詳細閲覧機能</li>
+    <li>店舗条件検索機能</li>
+    <li>店舗お気に入り登録機能</li>
+    <li>お問い合わせ機能</li>
+</ul>
 
-## Learning Laravel
+<h2>工夫した点</h2>
+<p>① 店舗特徴検索機能</p>
+<ul>
+    <li>古着屋を特徴で検索できる機能</li>
+    <li>各ユーザーが望むお店を、簡単に見つけられるように、ニーズを網羅しつつも多すぎない特徴数に設定した</li>
+    <li>GoogleMapとの差別化にもなる</li>
+</ul>
+<img src="https://user-images.githubusercontent.com/101101177/201847111-a56eb60e-9d17-4a29-aa73-a179ce061f38.png">
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p>② 店舗お気に入り登録機能</p>
+<ul>
+    <li>気に入った古着屋を保存できる機能</li>
+    <li>自分だけのお気に入り店舗リストを作ることで、古着巡りの効率化ができ、リピートにもつながる</li>
+</ul>
