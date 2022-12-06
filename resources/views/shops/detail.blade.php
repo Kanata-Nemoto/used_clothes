@@ -35,5 +35,5 @@
     </main>
     <script>const detailMarkerData = @json($shop);</script>
     <script type="module" src="{{ mix('/js/detail.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBoqG2pj5dVivX1cB8MWw-Evgh4D402Os&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAEy2ZBniYWTER1gjWopuBuBiguwcPpvo&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
 @endsection
